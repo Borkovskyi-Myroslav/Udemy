@@ -8,9 +8,14 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.save
-    flash[:success] = "Article has been created"
-    redirect_to articles_path
+
+    respond_to do |format|
+      if @article.save
+        format.html { redirect_to articles_path, notice: "Article has been created" }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
