@@ -13,7 +13,8 @@ class ArticlesController < ApplicationController
       if @article.save
         format.html { redirect_to articles_path, notice: "Article has been created" }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        flash.now[:danger] = "Article has not been created"
+        format.html { render :new, status: :unprocessable_entity}
       end
     end
   end
