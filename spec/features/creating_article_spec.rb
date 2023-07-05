@@ -25,16 +25,10 @@ RSpec.feature "Creating Articles" do
 
     click_button "Create Article"
 
-    # expect(page).to have_content(/Article has not been created/)
-    # expect(page).to have_content(/Title can't be blank/)
-    # expect(page).to have_content(/Body can`t be blank/)
-
     page.should have_content(/Article has not been created/)
     page.should have_content(/Title can't be blank/)
     page.should have_content(/Body can't be blank/)
 
-
-    #expect(page).to have_content("Blog App\nAuthors\nArticle has not been created")
   end
 
 end
