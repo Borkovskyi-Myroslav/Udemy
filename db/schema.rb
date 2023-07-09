@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_201109) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
