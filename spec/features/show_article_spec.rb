@@ -19,7 +19,7 @@ RSpec.feature "Showing an articles" do
     expect(current_path).to eq(article_path(@article))
 
     expect(page).not_to have_link("Edit Article")
-    expect(page).not_to have_link("Delete Article")
+    expect(page).not_to have_button("Delete Article")
   end
 
   scenario "to non-owner in user hide the Edit and Delete buttons" do
@@ -32,7 +32,7 @@ RSpec.feature "Showing an articles" do
     expect(current_path).to eq(article_path(@article))
 
     expect(page).not_to have_link("Edit Article")
-    expect(page).not_to have_link("Delete Article")
+    expect(page).not_to have_button("Delete Article")
   end
 
   scenario "A signed in owner sees both the Edit and Delete buttons" do
@@ -45,7 +45,7 @@ RSpec.feature "Showing an articles" do
     expect(current_path).to eq(article_path(@article))
 
     expect(page).to have_link("Edit Article")
-    expect(page).to have_link("Delete Article")
+    expect(page).to have_button("Delete Article")
   end
 
 end
