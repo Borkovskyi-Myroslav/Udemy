@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 // i am not sure if it works below
-//=  bootstrap-sprockets
+//=  bootstrap-sprocketsimport "channels"
